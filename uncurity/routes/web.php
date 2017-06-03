@@ -18,5 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 \App\Http\Controllers\HotelController::routes();
 Route::get('/home','HomeController@index');
-Route::resource('uncurity/tipo','TipoController');
+Route::resource('uncurity/','TipoController');
+Route::resource('uncurity/tipo/rfi','RfiController');
+Route::resource('uncurity/tipo/xss','XssController');
 

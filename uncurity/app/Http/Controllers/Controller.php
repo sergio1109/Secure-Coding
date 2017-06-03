@@ -22,5 +22,32 @@ class TipoController extends Controller
 
   	return view('uncurity.tipo.index');
 	}
+ 
+  
+}
+class RfiController extends Controller
+{
+  public function __construct(){
+
+
+  }
+  public function index(){
+
+  	return view('uncurity.tipo.rfi.index');
+	}
+ 
+  
+}
+class XssController extends Controller
+{
+  public function __construct(){
+
+
+  }
+  public function index(){
+
+  	return view('uncurity.tipo.xss.index');
+	}
+ 
   
 }
