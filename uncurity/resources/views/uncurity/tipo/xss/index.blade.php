@@ -1,5 +1,29 @@
 @extends('layouts.admin')
 @section('contenido')
+<script languague="javascript">
+        function mostrar() {
+            div = document.getElementById('flotante');
+            div.style.display = '';
+        }
+
+        function cerrar() {
+            div = document.getElementById('flotante');
+            div.style.display = 'none';
+        }
+        
+</script>
+<script languague="javascript">
+	function mostrarS() {
+            div = document.getElementById('servidor');
+            div.style.display = '';
+        }
+
+        function cerrarS() {
+            div = document.getElementById('servidor');
+            div.style.display = 'none';
+        }
+</script>
+
 	<h1>Cross Site Scripting (XSS)</h1>
 	<h2>¿Que es?</h2>
 	<div class="container-fluid">
@@ -29,23 +53,23 @@
 		</p>
 
 	</div>
-	<div class="container">
+	<div class="container-fluid">
 		<h2>Ejemplo</h2>
 		<p align="center"><img src="{{asset('img/imagen1.png')}}" alt=""></p>
 		<p align="center"><img src="{{asset('img/imagen2.png')}}" alt=""></p>
 	</div>
 	<br><br><br>
-	<div class="container">
+	<div class="container-fluid">
 		<p align="center"><img src="{{asset('img/imagen3.png')}}" alt=""></p>
 	</div><hr>
-	<div class="container">
+	<div class="container-fluid">
 		<h2>Almacenada-Persistente</h2>
 		<p style="font-size:20px;" align="justify">
 					Consiste en insertar código malicioso en sitios que lo permitan; de esta forma quedará visible a los usuarios que ingresen en el sitio modificado.
 
 		</p>
 	</div>
-	<div class="container">
+	<div class="container-fluid">
 		<h2>Ejemplo</h2>
 		
 		<p align="center"><img src="{{asset('img/imagen4.png')}}" alt=""></p><br><br>
@@ -57,4 +81,33 @@
 		</p>
 	</div>
 	<hr>
-@stop
+	<p><a href="javascript:mostrar();"><button type="button" class="btn btn-info"><p style="font-size:20px;" align="center">¿Cómo evitarlo? (usuario)</p></button></a></p>
+	<div id="flotante" style="display:none;">
+	     <div id="close"><a href="javascript:cerrar();">cerrar</a></div>
+	     <ul style="font-size:20px;">
+			  <li>Contar con un sistema de seguridad instalado (bloquear ejecuciones maliciosas)
+				</li>
+			  <li>Ser cuidadoso con las direcciones que se visitan ( revisar URL)
+				</li>
+			  <li>Navegadores alternativos (Evitar ataques dirigidos)
+				</li>
+		 </ul>  
+	</div>
+	<hr>
+
+	<p><a href="javascript:mostrarS();"><button type="button" class="btn btn-info"><p style="font-size:20px;" align="center">¿Cómo evitarlo? (Servidor)</p></button></a></p>
+	<div id="servidor" style="display:none;">
+	     <div id="close"><a href="javascript:cerrarS();">cerrar</a></div>
+	     <ul style="font-size:20px;">
+			  <li>Controles de validación en inputs 
+
+				</li>
+			  <li>La sanitización de los datos es importante (eliminar código potencialmente sensible)
+
+				</li>
+			  <li>Revisar la integridad de los datos que se devuelven
+				</li>
+		 </ul>  
+	</div>
+	<hr>
+@endsection
