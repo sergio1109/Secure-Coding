@@ -11,11 +11,11 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('css/font-awesome.css')}}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('css/AdminLTE.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/AdminLTE.css')}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('css/_all-skins.min.css')}}">
-    <link rel="apple-touch-icon" href="{{asset('img/apple-touch-icon.png')}}">
+    <link rel="favicon" href="{{asset('img/favicon.png')}}">
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
 
   </head>
@@ -25,9 +25,9 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="/uncurity/" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>UN</b>V</span>
+          <span class="logo-mini"><b>UN</b></span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b>Uncurity</b></span>
         </a>
@@ -45,10 +45,7 @@
               
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <small class="bg-red">Online</small>
-                  <span class="hidden-xs"></span>
-                </a>
+               
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
