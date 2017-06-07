@@ -1,5 +1,17 @@
 @extends('layouts.admin')
 @section('contenido')
+	<script languague="javascript">
+		function mostrarP() {
+	            div = document.getElementById('practice');
+	            div.style.display = '';
+	        }
+
+	        function cerrarP() {
+	            div = document.getElementById('practice');
+	            div.style.display = 'none';
+	        }
+	</script>
+	
 	<h1>Remote File Inclusion (RFI)(XSS)</h1>
 	<h2>¿Que es?</h2>
 	<div class="container-fluid">
@@ -65,6 +77,30 @@
 		<p style="font-size:20px;" align="justify">
 				El atacante sentirá más curiosidad y cada vez irá mejorando su shell.txt hasta que pueda tener la opción de leer los archivos que se encuentran en cada directorio. También podría llegar a subir archivos, descargar archivos, crear archivos y cualquier otra por la cual pueda sentir curiosidad.
 
-		</p>
+		</p><hr>
+		<h3>Practica</h3>
+			<p  align="center"><a href="javascript:mostrarP();"><button  style='border-radius:35px; width:200px; height:70px;' type="button" class="btn btn-info"><p style="font-size:40px;" align="center">Iniciar</p></button></a></p>
+		<div id="practice" style="display:none;">
+		     <p style="font-size:20px;" align="justify">
+				Ahora pondras en practica el concepto de RFI, para esto te daremos algunas pistas.
+				<br>
+				Existe un servidor vulnerable (http://soyjuan.com/index.php?page=plantilla.html) y debera acceder a la carpeta "Bancos", para esto debera hacer una inclusion remota de archivos desde un servidor atacante (http://soyalejo.com/) por medio de una shell. <br>
+				Te daremos una gran ayuda, la shell que se encuentra en el servidor atacante es "shell.txt&cmd=ls", lo unico que falta es acceder a la carpeta "Bancos" que se encuentra dentro de la carpeta "principal" del servidor vulnerable.
+			</p>
+		     
+		   
+			<p align="center"><input size="100"  type="text" id="nombre"></p><br>
+			<p align="center"><input type="button" class="btn btn-warning" id="obtenerRfi" value="Enviar"></p>
+			<div id="resultado" style="display:none;"><hr>
+			<div>
+				
+				<img src="{{asset('img/rfi23.png')}}" alt="">
+			</div>
+
+
+
+			<div id="close"><a style="font-size:30px;" href="javascript:cerrarR();">Reiniciar</a></div></div>
+			
+		</div>
 	</div>
 @endsection

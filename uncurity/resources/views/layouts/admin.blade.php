@@ -18,7 +18,17 @@
     <link rel="favicon" href="{{asset('img/favicon.png')}}">
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
     <script src="{{asset('js/jquery.js')}}"></script>
+  <script languague="javascript">
+    function mostrarR() {
+              div = document.getElementById('resultado');
+              div.style.display = '';
+          }
 
+    function cerrarR() {
+              div = document.getElementById('resultado');
+              div.style.display = 'none';
+          }
+  </script>
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -219,6 +229,56 @@
 
 
         //alert(contenido);
+        
+      });
+    });
+  </script> 
+
+
+  <script>
+    $( document ).ready(function($nombre) {
+      $("#obtenerRfi").click(function() {
+        var valor=$("#nombre").val();
+        /*le quitamos todos los espacio*/
+        if (valor.length>0) {
+          var valor2=valor.replace(/\s/g,"");
+        var pagVul = valor2.substring(0,34);
+        var pagAta = valor2.substring(34,54);
+        var shell = valor2.substring(54,70);
+        var carpeta1 = valor2.substring(70,81);
+        var carpeta2 = valor2.substring(81,87);
+        
+       
+       
+        
+        /*analizamos la estructura de la variable*/
+       if (pagVul == "http://soyjuan.com/index.php?page=") {
+          if(pagAta == "http://soyalejo.com/"){
+            if (shell == "shell.txt&cmd=ls") {
+              if (carpeta1 == "/principal/") {
+                if (carpeta2== "Bancos") {
+                  alert("Felicitaciones has encontrado la carpeta correcta");
+                  return mostrarR();
+                }else{
+                  alert("Carpeta no encontrada");
+                }
+              }else{
+                alert("Carpeta no encontrada");
+              }
+
+            }else{
+              alert("Shell no encontrado");
+            }
+          }else{alert("Pagina atacante incorrecta");}
+        } else {
+                 alert("Pagina vulnerable incorrecta");
+                 
+      }
+
+
+        }else{alert("Por favor ingresa una direccion");
+        }
+       // alert("paila");
         
       });
     });
