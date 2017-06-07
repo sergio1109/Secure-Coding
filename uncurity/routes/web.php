@@ -21,4 +21,10 @@ Route::get('/home','HomeController@index');
 Route::resource('uncurity/','TipoController');
 Route::resource('uncurity/tipo/rfi','RfiController');
 Route::resource('uncurity/tipo/xss','XssController');
+Route::get('uncurity/tipo/xss/', function (Request $request) {
+	
+    return view('uncurity.tipo.xss.index');
+	
+});
+
 

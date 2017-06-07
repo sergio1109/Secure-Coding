@@ -13,6 +13,16 @@
         
 </script>
 <script languague="javascript">
+        function recibir($loles) {
+
+            alert('$loles');
+        }
+
+       
+        
+</script>
+
+<script languague="javascript">
 	function mostrarS() {
             div = document.getElementById('servidor');
             div.style.display = '';
@@ -20,6 +30,17 @@
 
         function cerrarS() {
             div = document.getElementById('servidor');
+            div.style.display = 'none';
+        }
+</script>
+<script languague="javascript">
+	function mostrarP() {
+            div = document.getElementById('practice');
+            div.style.display = '';
+        }
+
+        function cerrarP() {
+            div = document.getElementById('practice');
             div.style.display = 'none';
         }
 </script>
@@ -39,6 +60,10 @@
 	
 
 	</div>
+
+	
+		
+	
 	<div class="container-fluid">
 		<h2>Tipos</h2>
 		<p style="font-size:20px;" align="jutsify">
@@ -109,5 +134,15 @@
 				</li>
 		 </ul>  
 	</div>
+	<h3>Practica</h3>
+	<p><a href="javascript:mostrarP();"><button type="button" class="btn btn-info"><p style="font-size:20px;" align="center">Iniciar</p></button></a></p>
+	<div id="practice" style="display:none;">
+	     <div id="close"><a href="javascript:cerrarP();">cerrar</a></div>
+	     
+	     
+		<input type="text" id="nombre">
+		<input type="button" id="obtener" value="obtener">
+	</div>
 	<hr>
+
 @endsection

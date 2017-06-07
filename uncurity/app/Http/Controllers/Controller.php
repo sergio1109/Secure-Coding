@@ -46,8 +46,14 @@ class XssController extends Controller
   }
   public function index(){
 
-  	return view('uncurity.tipo.xss.index');
-	}
- 
+      
+    
+      return view('uncurity.tipo.xss.index');
   
-}
+	}
+
+  
+ }
+
+
+

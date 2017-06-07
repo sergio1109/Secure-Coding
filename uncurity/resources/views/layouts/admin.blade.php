@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{asset('css/_all-skins.min.css')}}">
     <link rel="favicon" href="{{asset('img/favicon.png')}}">
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
+    <script src="{{asset('js/jquery.js')}}"></script>
 
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
@@ -194,7 +195,34 @@
         
       </footer>
 
-      
+     <script>
+    $( document ).ready(function($nombre) {
+      $("#obtener").click(function() {
+        var valor=$("#nombre").val();
+        /*le quitamos todos los espacio*/
+        var valor2=valor.replace(/\s/g,"");
+        var inicioScript = valor2.substring(0, 8);
+
+        var tamano = valor2.length;
+        var finScript =valor2.substring(tamano,tamano-9);
+        var inicioAlert = valor2.substring(8,15);
+        var finAlert = valor2.substring(tamano-9,tamano-12);
+        var contenido = valor2.substring(15,tamano-12);
+        if (inicioScript == "<script>" && finScript == "<\/script>") {
+          if((inicioAlert == "alert('" || inicioAlert == 'alert("' ) 
+            && (finAlert == "');" || finAlert =='");') ){
+            alert(contenido);
+          }else{alert("nook");}
+          } else {
+                 alert("paila");
+      }
+
+
+        //alert(contenido);
+        
+      });
+    });
+  </script> 
     <!-- jQuery 2.1.4 -->
     <script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>
     <!-- Bootstrap 3.3.5 -->

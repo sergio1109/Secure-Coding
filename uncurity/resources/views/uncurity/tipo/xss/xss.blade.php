@@ -1,4 +1,6 @@
 @extends('layouts.admin')
 @section('contenido')
-	<h3>XSS</h3>
+	<h3>XSShggg</h3>
+	
+
 @stop
